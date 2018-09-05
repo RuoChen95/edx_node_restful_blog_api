@@ -22,13 +22,12 @@ Test by <code>sh test_index2.sh</code>
 
 Test by <code>sh test_server.sh</code>
 
-遗留问题：
+问题：
 
-1. 子组件数据交互
+1. 子组件数据交互 => middleWare + 将数据放在req的属性上
 
-2. 子组件功能合并
+2. 子组件功能合并 => routes.postObj.getPosts：2层指向
 
-(Firstly, the data is not synchroniz. Secondly, I don't know how to put comment.js and posts.js into index.js and export it.)
 
 ---
 

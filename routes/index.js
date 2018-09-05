@@ -1,7 +1,4 @@
-var postsObj = require('./posts')
-var comments = require('./comments')
-
 module.exports = {
-  getPosts: postsObj.getPosts(req, res),
-  comments
+  postObj: require('./posts.js'),
+  commentsObj: require('./comments.js')
 }
