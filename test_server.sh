@@ -1,13 +1,57 @@
-curl "http://localhost:3000/accounts"
+curl --request GET \
+  --url http://localhost:3000/posts
 
-curl -H "Content-Type: application/json" -X POST -d '{"balance": 100, "name":"checking"}' http://localhost:3000/accounts
+curl --request POST \
+  --url http://localhost:3000/posts \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "name": "11111Top 1000 ES6 Features every Web Developer must know",
+  "url": "https://webapplog.com/es6",
+  "text": "This essay will give you a quick introduction to ES6.",
+  "comments": [
+    "1",
+    "2",
+    "3"
+  ]
+}'
 
-curl "http://localhost:3000/accounts"
+curl --request PUT \
+  --url http://localhost:3000/posts/2 \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "name": "11111Top 1000 ES6 Features every Web Developer must know",
+  "url": "https://webapplog.com/es61",
+  "text": "This essay will give you a quick introduction to ES6.",
+  "comments": [
+    "1123",
+    "2",
+    "312312312312323"
+  ]
+}'
 
-curl -H 'Content-Type: application/json' -X PUT -d '{"balance": 200, "name": "savings"}'  "http://localhost:3000/accounts/0"
+curl --request DELETE \
+  --url http://localhost:3000/posts/0 \
+  --header 'Content-Type: application/json'
 
-curl "http://localhost:3000/accounts"
+curl --request GET \
+  --url http://localhost:3000/posts/0/comments
 
-curl -X DELETE "http://localhost:3000/accounts/0"
+curl --request POST \
+  --url http://localhost:3000/posts/0/comments \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"comments":"1"
+}
+'
 
-curl "http://localhost:3000/accounts"
+curl --request PUT \
+  --url http://localhost:3000/posts/0/comments/0 \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "comments":
+    "21312123123"
+}'
+
+curl --request DELETE \
+  --url http://localhost:3000/posts/0/comments/0 \
+  --header 'Content-Type: application/json'
